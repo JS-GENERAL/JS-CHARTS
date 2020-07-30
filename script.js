@@ -196,4 +196,136 @@ var chart5 = new CanvasJS.Chart("chartContainer5", {
 chart5.render();
 
 
+
+//Grafico 6
+
+var chart6 = new CanvasJS.Chart("chartContainer6", {
+	animationEnabled: true,
+	title:{
+		text: "Grafico De Trafico"
+	},
+	axisX:{
+		valueFormatString: "DD MMM"
+	},
+	axisY: {
+		title: "Number of Visitors",
+		scaleBreaks: {
+			autoCalculate: true
+		}
+	},
+	data: [{
+		type: "line",
+		xValueFormatString: "DD MMM",
+		color: "#F08080",
+		dataPoints: [
+			{ x: new Date(2017, 0, 1), y: 610 },
+			{ x: new Date(2017, 0, 2), y: 680 },
+			{ x: new Date(2017, 0, 3), y: 690 },
+			{ x: new Date(2017, 0, 4), y: 700 },
+			{ x: new Date(2017, 0, 5), y: 710 },
+			{ x: new Date(2017, 0, 6), y: 658 },
+			{ x: new Date(2017, 0, 7), y: 734 },
+			{ x: new Date(2017, 0, 8), y: 963 },
+			{ x: new Date(2017, 0, 9), y: 847 },
+			{ x: new Date(2017, 0, 10), y: 853 },
+			{ x: new Date(2017, 0, 11), y: 869 },
+			{ x: new Date(2017, 0, 12), y: 943 },
+			{ x: new Date(2017, 0, 13), y: 970 },
+			{ x: new Date(2017, 0, 14), y: 869 },
+			{ x: new Date(2017, 0, 15), y: 890 },
+			{ x: new Date(2017, 0, 16), y: 930 },
+			{ x: new Date(2017, 0, 17), y: 1850 },
+			{ x: new Date(2017, 0, 18), y: 1905 },
+			{ x: new Date(2017, 0, 19), y: 1980 },
+			{ x: new Date(2017, 0, 20), y: 1858 },
+			{ x: new Date(2017, 0, 21), y: 1034 },
+			{ x: new Date(2017, 0, 22), y: 963 },
+			{ x: new Date(2017, 0, 23), y: 847 },
+			{ x: new Date(2017, 0, 24), y: 853 },
+			{ x: new Date(2017, 0, 25), y: 869 },
+			{ x: new Date(2017, 0, 26), y: 943 },
+			{ x: new Date(2017, 0, 27), y: 970 },
+			{ x: new Date(2017, 0, 28), y: 869 },
+			{ x: new Date(2017, 0, 29), y: 890 },
+			{ x: new Date(2017, 0, 30), y: 930 },
+			{ x: new Date(2017, 0, 31), y: 750 }
+		]
+	}]
+});
+chart6.render();
+
+
+//Grafico 7
+
+var chart7 = new CanvasJS.Chart("chartContainer7", {
+	animationEnabled: true,
+	
+	title:{
+		text:"Barra Lateral"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		interlacedColor: "rgba(1,77,101,.2)",
+		gridColor: "rgba(1,77,101,.1)",
+		title: "Number of Companies"
+	},
+	data: [{
+		type: "bar",
+		name: "companies",
+		axisYType: "secondary",
+		color: "#014D65",
+		dataPoints: [
+			{ y: 3, label: "Sweden" },
+			{ y: 7, label: "Taiwan" },
+			{ y: 5, label: "Russia" },
+			{ y: 9, label: "Spain" },
+			{ y: 7, label: "Brazil" },
+			{ y: 7, label: "India" },
+			{ y: 9, label: "Italy" },
+			{ y: 8, label: "Australia" },
+			{ y: 11, label: "Canada" },
+			{ y: 15, label: "South Korea" },
+			{ y: 12, label: "Netherlands" },
+			{ y: 15, label: "Switzerland" },
+			{ y: 25, label: "Britain" },
+			{ y: 28, label: "Germany" },
+			{ y: 29, label: "France" },
+			{ y: 52, label: "Japan" },
+			{ y: 103, label: "China" },
+			{ y: 134, label: "US" }
+		]
+	}]
+});
+chart7.render();
+
+
+//Grafico 8
+
+var chart8 = new CanvasJS.Chart("chartContainer8", {
+	animationEnabled: true,
+	exportEnabled: true,
+	theme: "light1",
+	title:{
+		text: "Grafico Piramidal"
+	},
+	data: [{
+		type: "pyramid",
+		yValueFormatString: "#\"%\"",
+		indexLabelFontColor: "black",
+		indexLabelFontSize: 16,
+		indexLabel: "{label} - {y}",
+		//reversed: true, // Reverses the pyramid
+		dataPoints: [
+			{ y: 100, label: "a" },
+			{ y: 65, label: "b" },
+			{ y: 45, label: "c" },
+			{ y: 32, label: "d" },
+			{ y: 5, label: "e" }
+		]
+	}]
+});
+chart8.render();
+
   }

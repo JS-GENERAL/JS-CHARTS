@@ -5,3 +5,12 @@ body
     border:3px solid red;
 }
 
+
+h1
+{
+    border:2px solid blue;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
