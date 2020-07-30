@@ -290,7 +290,7 @@ var chart7 = new CanvasJS.Chart("chartContainer7", {
 			{ y: 12, label: "Netherlands" },
 			{ y: 15, label: "Switzerland" },
 			{ y: 25, label: "Britain" },
-			{ y: 28, label: "Germany" },
+			{ y: 28, label: "Germanygit" },
 			{ y: 29, label: "France" },
 			{ y: 52, label: "Japan" },
 			{ y: 103, label: "China" },
