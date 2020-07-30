@@ -328,4 +328,218 @@ var chart8 = new CanvasJS.Chart("chartContainer8", {
 });
 chart8.render();
 
+
+
+
+//Grafico 9
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+var chart9 = am4core.create("chartContainer9", am4charts.PieChart);
+
+// Add data
+chart9.data = [ {
+  "country": "Lithuania",
+  "litres": 501.9
+}, {
+  "country": "Czechia",
+  "litres": 301.9
+}, {
+  "country": "Ireland",
+  "litres": 201.1
+}, {
+  "country": "Germany",
+  "litres": 165.8
+}, {
+  "country": "Australia",
+  "litres": 139.9
+}, {
+  "country": "Austria",
+  "litres": 128.3
+}, {
+  "country": "UK",
+  "litres": 99
+}, {
+  "country": "Belgium",
+  "litres": 60
+}, {
+  "country": "The Netherlands",
+  "litres": 50
+} ];
+
+// Add and configure Series
+var pieSeries = chart9.series.push(new am4charts.PieSeries());
+pieSeries.dataFields.value = "litres";
+pieSeries.dataFields.category = "country";
+pieSeries.slices.template.stroke = am4core.color("#fff");
+pieSeries.slices.template.strokeWidth = 2;
+pieSeries.slices.template.strokeOpacity = 1;
+
+// This creates initial animation
+pieSeries.hiddenState.properties.opacity = 1;
+pieSeries.hiddenState.properties.endAngle = -90;
+pieSeries.hiddenState.properties.startAngle = -90;
+
+
+//Grafico 10
+
+// Create chart instance
+var chart3 = am4core.create("chartContainer10", am4charts.XYChart3D);
+
+// Add data
+chart3.data = [{
+  "country": "USA",
+  "visits": 4025
+}, {
+  "country": "China",
+  "visits": 1882
+}, {
+  "country": "Japan",
+  "visits": 1809
+}, {
+  "country": "Germany",
+  "visits": 1322
+}, {
+  "country": "UK",
+  "visits": 1122
+}, {
+  "country": "France",
+  "visits": 1114
+}, {
+  "country": "India",
+  "visits": 984
+}, {
+  "country": "Spain",
+  "visits": 711
+}, {
+  "country": "Netherlands",
+  "visits": 665
+}, {
+  "country": "Russia",
+  "visits": 580
+}, {
+  "country": "South Korea",
+  "visits": 443
+}, {
+  "country": "Canada",
+  "visits": 441
+}, {
+  "country": "Brazil",
+  "visits": 395
+}, {
+  "country": "Italy",
+  "visits": 386
+}, {
+  "country": "Australia",
+  "visits": 384
+}, {
+  "country": "Taiwan",
+  "visits": 338
+}, {
+  "country": "Poland",
+  "visits": 328
+}];
+
+// Create axes
+let categoryAxis = chart3.xAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "country";
+categoryAxis.renderer.labels.template.rotation = 270;
+categoryAxis.renderer.labels.template.hideOversized = false;
+categoryAxis.renderer.minGridDistance = 20;
+categoryAxis.renderer.labels.template.horizontalCenter = "right";
+categoryAxis.renderer.labels.template.verticalCenter = "middle";
+categoryAxis.tooltip.label.rotation = 270;
+categoryAxis.tooltip.label.horizontalCenter = "right";
+categoryAxis.tooltip.label.verticalCenter = "middle";
+
+let valueAxis = chart3.yAxes.push(new am4charts.ValueAxis());
+valueAxis.title.text = "Countries";
+valueAxis.title.fontWeight = "bold";
+
+// Create series
+var series = chart3.series.push(new am4charts.ColumnSeries3D());
+series.dataFields.valueY = "visits";
+series.dataFields.categoryX = "country";
+series.name = "Visits";
+series.tooltipText = "{categoryX}: [bold]{valueY}[/]";
+series.columns.template.fillOpacity = .8;
+
+var columnTemplate = series.columns.template;
+columnTemplate.strokeWidth = 2;
+columnTemplate.strokeOpacity = 1;
+columnTemplate.stroke = am4core.color("#FFFFFF");
+
+columnTemplate.adapter.add("fill", function(fill, target) {
+  return chart3.colors.getIndex(target.dataItem.index);
+})
+
+columnTemplate.adapter.add("stroke", function(stroke, target) {
+  return chart3.colors.getIndex(target.dataItem.index);
+})
+
+chart3.cursor = new am4charts.XYCursor();
+chart3.cursor.lineX.strokeOpacity = 0;
+chart3.cursor.lineY.strokeOpacity = 0;
+
+
+
+//Grafico 11
+
+// Themes begin
+am4core.useTheme(am4themes_dataviz);
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+var chart4 = am4core.create("chartContainer11", am4charts.PieChart3D);
+chart4.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+chart4.legend = new am4charts.Legend();
+
+chart4.data = [
+  {
+    country: "Lithuania",
+    litres: 501.9
+  },
+  {
+    country: "Czech Republic",
+    litres: 301.9
+  },
+  {
+    country: "Ireland",
+    litres: 201.1
+  },
+  {
+    country: "Germany",
+    litres: 165.8
+  },
+  {
+    country: "Australia",
+    litres: 139.9
+  },
+  {
+    country: "Austria",
+    litres: 128.3
+  },
+  {
+    country: "UK",
+    litres: 99
+  },
+  {
+    country: "Belgium",
+    litres: 60
+  },
+  {
+    country: "The Netherlands",
+    litres: 50
+  }
+];
+
+var series = chart4.series.push(new am4charts.PieSeries3D());
+series.dataFields.value = "litres";
+series.dataFields.category = "country";
+
+
   }

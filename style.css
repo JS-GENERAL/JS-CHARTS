@@ -24,3 +24,8 @@ div
     outline:5px solid black;
 }
 
+#chartContainer9 , #chartContainer10 , #chartContainer11
+{
+    background-color: #fff;
+}
+
